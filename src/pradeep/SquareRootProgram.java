@@ -10,6 +10,7 @@ public class SquareRootProgram {
 	double a=sc.nextDouble();
 	double b=Math.sqrt(a);
 	System.out.println(b);
+	//add
 
 	}
 

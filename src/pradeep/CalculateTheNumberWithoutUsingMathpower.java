@@ -15,7 +15,7 @@ public class CalculateTheNumberWithoutUsingMathpower {
 			c=c*a;
 		}
 		System.out.println(c);
-		//bcd
+		
 	}
 
 }

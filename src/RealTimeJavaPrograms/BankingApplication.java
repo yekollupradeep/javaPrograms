@@ -35,7 +35,10 @@ class  BankAccount{
 		}
 	}
 	void withdraw(int amount) {
-		if ( amount!=0) {
+		if(amount>balanace) {
+			System.out.println("insufficent funds in your account");
+		}
+		else{
 			balanace= balanace-amount;
 			previousTranasaction= -amount;
 		}
@@ -55,36 +58,36 @@ class  BankAccount{
 	void showMenu() {
 		char option='\0';
 		
-		System.out.println(" Welcome:"+customerName);
-		System.out.println(" yourId:"+customerId);
-		System.out.println("\n");
+		System.out.println("Welcome:"+customerName);
+		System.out.println("yourId:"+customerId);
+//		System.out.println("\n");
 		System.out.println("A: Check Your Balance");
 		System.out.println("B: Deposit");
-		System.out.println(" C: WithDraw");
-		System.out.println(" D: previous Transaction");
-		System.out.println(" E: Exit the system ");
+		System.out.println("C: WithDraw");
+		System.out.println("D: previous Transaction");
+		System.out.println("E: Exit the system ");
 		
 		do {
 			 Scanner sc = new Scanner(System.in);
-			System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
+			System.out.println("=*==*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
 			System.out.println(" Enter your option");
-			System.out.println("=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
+			System.out.println("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*");
 			option =sc.next().charAt(0);
 			System.out.println("\n");
 			
 			switch (option) {
 			
 			case 'A':
-				System.out.println("-------------------------------------");
+				System.out.println("-----------------------");
 				System.out.println(" Balance="+balanace);
-				System.out.println("=================================================");
+				System.out.println("==============================");
 				System.out.println("\n");
 				break;
 				
 			case 'B':
-				System.out.println("-------------------------------------");
+				System.out.println("------------------------------");
 				System.out.println(" Enter a Amount To Deposit");
-				System.out.println("=================================================");
+				System.out.println("=====================================");
 				
 				int amount=  sc.nextInt();
 				deposit(amount);
@@ -93,9 +96,9 @@ class  BankAccount{
 				break;
 				
 			case 'C':
-				System.out.println("-------------------------------------");
-				System.out.println(" Enter a Amount To Deposit");
-				System.out.println("=================================================");
+				System.out.println("------------------------");
+				System.out.println(" Enter a Amount To WITHDRAW");
+				System.out.println("==============================");
 				
 				int amount2=  sc.nextInt();
 				withdraw(amount2);
@@ -104,9 +107,9 @@ class  BankAccount{
 				break;
 				
 			case 'D':
-				System.out.println("--------------------------------------------------");
+				System.out.println("------------------------");
 				getPrevioustranasaction();
-				System.out.println("=========================================================");
+				System.out.println("========================");
 				System.out.println("\n");
 				break;
 				
